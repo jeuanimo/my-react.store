@@ -1,0 +1,44 @@
+.qty-picker {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 0.25rem;
+  background-color: white;
+  width: fit-content;
+}
+
+.btnDecrease,
+.btnIncrease {
+  background-color: #933;
+  color: white;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.2s;
+  min-width: 32px;
+}
+
+.btnDecrease:hover:not(:disabled),
+.btnIncrease:hover {
+  background-color: #722;
+}
+
+.btnDecrease:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.qty-label {
+  font-weight: bold;
+  font-size: 1rem;
+  min-width: 2rem;
+  text-align: center;
+  padding: 0.5rem;
+  color: #333;
+}
