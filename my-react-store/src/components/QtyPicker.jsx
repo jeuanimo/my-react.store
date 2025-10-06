@@ -2,26 +2,45 @@ import "./QtyPicker.css";
 import { useState } from "react";
 
 // Logical component
-function QuantityPicker() {
-  const [quantity, setQuantity] = useState(1);
-  
+function QuantityPicker({ onQuantityChange, initialQuantity = 1 }) {
+  const [quantity, setQuantity] = useState(initialQuantity);
+
   function increase() {
-    setQuantity(quantity + 1);
+    const newQuantity = quantity + 1;
+    setQuantity(newQuantity);
+    if (onQuantityChange) {
+      onQuantityChange(newQuantity);
+    }
   }
-  
+
   function decrease() {
     if (quantity > 1) {
-      setQuantity(quantity - 1);
+      const newQuantity = quantity - 1;
+      setQuantity(newQuantity);
+      if (onQuantityChange) {
+        onQuantityChange(newQuantity);
+      }
     }
   }
 
   return (
     <div className="qty-picker">
-      <button className="btnDecrease" onClick={decrease} disabled={quantity <= 1}>
+      <button
+        className="btnDecrease"
+        onClick={decrease}
+        disabled={quantity <= 1}
+        aria-label="Decrease quantity"
+      >
         -
       </button>
-      <label className="qty-label">{quantity}</label>
-      <button className="btnIncrease" onClick={increase}>
+      <label className="qty-label" aria-label={`Quantity: ${quantity}`}>
+        {quantity}
+      </label>
+      <button
+        className="btnIncrease"
+        onClick={increase}
+        aria-label="Increase quantity"
+      >
         +
       </button>
     </div>
@@ -29,4 +48,3 @@ function QuantityPicker() {
 }
 
 export default QuantityPicker;
-
