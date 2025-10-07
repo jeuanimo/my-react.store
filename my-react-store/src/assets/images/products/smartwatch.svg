@@ -1,0 +1,10 @@
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="400" fill="#f0f0f0"/>
+  <rect x="50" y="50" width="300" height="300" fill="#933" rx="20"/>
+  <text x="200" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="white">Smart</text>
+  <text x="200" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="white">Fitness</text>
+  <text x="200" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="white">Watch</text>
+  <rect x="140" y="240" width="120" height="80" fill="white" opacity="0.3" rx="15"/>
+  <circle cx="200" cy="260" r="8" fill="white"/>
+  <text x="200" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">12:00</text>
+</svg>

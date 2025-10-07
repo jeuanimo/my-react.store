@@ -1,0 +1,8 @@
+{
+  "name": "image-optimization-script",
+  "description": "Helper script for optimizing product images in public folder",
+  "scripts": {
+    "optimize-images": "echo 'Install imagemin-cli: npm install -g imagemin-cli' && echo 'Then run: imagemin public/images/products/*.jpg --out-dir=public/images/products/optimized --plugin=imagemin-mozjpeg'",
+    "check-images": "node -e \"const fs = require('fs'); const path = 'public/images/products'; const images = ['headphones', 'smartwatch', 'speaker', 'mouse', 'keyboard', 'usb-hub']; images.forEach(img => { const exists = fs.existsSync(path + '/' + img + '.jpg') || fs.existsSync(path + '/' + img + '.png') || fs.existsSync(path + '/' + img + '.svg'); console.log(img + ': ' + (exists ? '✅' : '❌')); });\""
+  }
+}

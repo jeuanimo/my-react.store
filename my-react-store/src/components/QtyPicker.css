@@ -5,14 +5,14 @@
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 0.25rem;
-  background-color: white;
+  background-color: #ffffff;
   width: fit-content;
 }
 
 .btnDecrease,
 .btnIncrease {
-  background-color: #933;
-  color: white;
+  background-color: #164f90;
+  color: #ffffff;
   border: none;
   padding: 0.5rem 0.75rem;
   border-radius: 4px;
@@ -25,7 +25,7 @@
 
 .btnDecrease:hover:not(:disabled),
 .btnIncrease:hover {
-  background-color: #722;
+  background-color: #2E4BC6;
 }
 
 .btnDecrease:disabled {

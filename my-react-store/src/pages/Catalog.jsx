@@ -1,40 +1,27 @@
 import Product from "../components/Product";
 import "./Catalog.css";
+import DataService from "../services/dataService";
+import { useState, useEffect } from "react";
 
 function Catalog() {
-  // Sample product data
-  const products = [
-    {
-      title: "Premium Wireless Headphones",
-      price: 99.99,
-      image: "https://picsum.photos/200/300?random=1"
-    },
-    {
-      title: "Smart Fitness Watch",
-      price: 199.99,
-      image: "https://picsum.photos/200/300?random=2"
-    },
-    {
-      title: "Bluetooth Speaker",
-      price: 49.99,
-      image: "https://picsum.photos/200/300?random=3"
-    },
-    {
-      title: "Wireless Mouse",
-      price: 29.99,
-      image: "https://picsum.photos/200/300?random=4"
-    },
-    {
-      title: "Gaming Keyboard",
-      price: 79.99,
-      image: "https://picsum.photos/200/300?random=5"
-    },
-    {
-      title: "USB-C Hub",
-      price: 39.99,
-      image: "https://picsum.photos/200/300?random=6"
-    }
-  ];
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const dataService = new DataService();
+    const data = dataService.getProducts();
+    setProducts(data);
+    setLoading(false);
+    console.log(data);
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="catalog">
+        <h1>Loading...</h1>
+      </div>
+    );
+  }
 
   return (
     <div className="catalog">
@@ -43,12 +30,13 @@ function Catalog() {
         <p>Find the perfect tech accessories for your lifestyle</p>
       </div>
       <div className="products-grid">
-        {products.map((product, index) => (
+        {products.map((product) => (
           <Product
-            key={index}
+            key={product._id}
             title={product.title}
             price={product.price}
             image={product.image}
+            category={product.category}
           />
         ))}
       </div>

@@ -1,0 +1,13 @@
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="400" fill="#f0f0f0"/>
+  <rect x="50" y="50" width="300" height="300" fill="#933" rx="20"/>
+  <text x="200" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="white">USB-C</text>
+  <text x="200" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="white">Hub</text>
+  <rect x="140" y="230" width="120" height="40" fill="white" opacity="0.3" rx="20"/>
+  <circle cx="160" cy="250" r="6" fill="white" opacity="0.7"/>
+  <circle cx="180" cy="250" r="6" fill="white" opacity="0.7"/>
+  <circle cx="200" cy="250" r="6" fill="white" opacity="0.7"/>
+  <circle cx="220" cy="250" r="6" fill="white" opacity="0.7"/>
+  <circle cx="240" cy="250" r="6" fill="white" opacity="0.7"/>
+  <rect x="190" y="215" width="20" height="10" fill="white" opacity="0.5" rx="5"/>
+</svg>
