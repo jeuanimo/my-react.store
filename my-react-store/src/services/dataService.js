@@ -57,7 +57,7 @@ class DataService {
   }
 
   getCategories() {
-    const categories = [...new Set(catalog.map(product => product.category))];
+    const categories = [...new Set(catalog.map((product) => product.category))];
     return categories.sort();
   }
 }

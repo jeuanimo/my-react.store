@@ -1,11 +1,11 @@
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState, useEffect } from "react";
 
 const CartContext = createContext();
 
 export const useCart = () => {
   const context = useContext(CartContext);
   if (!context) {
-    throw new Error('useCart must be used within a CartProvider');
+    throw new Error("useCart must be used within a CartProvider");
   }
   return context;
 };
@@ -13,12 +13,12 @@ export const useCart = () => {
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [toastMessage, setToastMessage] = useState('');
+  const [toastMessage, setToastMessage] = useState("");
   const [isToastVisible, setIsToastVisible] = useState(false);
 
   // Load cart from localStorage on component mount
   useEffect(() => {
-    const savedCart = localStorage.getItem('sigmaElectronicsCart');
+    const savedCart = localStorage.getItem("sigmaElectronicsCart");
     if (savedCart) {
       setCartItems(JSON.parse(savedCart));
     }
@@ -26,7 +26,7 @@ export const CartProvider = ({ children }) => {
 
   // Save cart to localStorage whenever cart changes
   useEffect(() => {
-    localStorage.setItem('sigmaElectronicsCart', JSON.stringify(cartItems));
+    localStorage.setItem("sigmaElectronicsCart", JSON.stringify(cartItems));
   }, [cartItems]);
 
   const showToast = (message) => {
@@ -39,12 +39,12 @@ export const CartProvider = ({ children }) => {
   };
 
   const addToCart = (product, quantity = 1) => {
-    setCartItems(prevItems => {
-      const existingItem = prevItems.find(item => item._id === product._id);
-      
+    setCartItems((prevItems) => {
+      const existingItem = prevItems.find((item) => item._id === product._id);
+
       if (existingItem) {
         showToast(`Updated ${product.title} quantity in cart`);
-        return prevItems.map(item =>
+        return prevItems.map((item) =>
           item._id === product._id
             ? { ...item, quantity: item.quantity + quantity }
             : item
@@ -57,7 +57,9 @@ export const CartProvider = ({ children }) => {
   };
 
   const removeFromCart = (productId) => {
-    setCartItems(prevItems => prevItems.filter(item => item._id !== productId));
+    setCartItems((prevItems) =>
+      prevItems.filter((item) => item._id !== productId)
+    );
   };
 
   const updateQuantity = (productId, newQuantity) => {
@@ -65,12 +67,10 @@ export const CartProvider = ({ children }) => {
       removeFromCart(productId);
       return;
     }
-    
-    setCartItems(prevItems =>
-      prevItems.map(item =>
-        item._id === productId
-          ? { ...item, quantity: newQuantity }
-          : item
+
+    setCartItems((prevItems) =>
+      prevItems.map((item) =>
+        item._id === productId ? { ...item, quantity: newQuantity } : item
       )
     );
   };
@@ -80,7 +80,10 @@ export const CartProvider = ({ children }) => {
   };
 
   const getCartTotal = () => {
-    return cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
+    return cartItems.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0
+    );
   };
 
   const getCartCount = () => {
@@ -104,12 +107,8 @@ export const CartProvider = ({ children }) => {
     setIsCartOpen,
     toastMessage,
     isToastVisible,
-    hideToast
+    hideToast,
   };
 
-  return (
-    <CartContext.Provider value={value}>
-      {children}
-    </CartContext.Provider>
-  );
+  return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };

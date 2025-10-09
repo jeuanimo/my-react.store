@@ -1,7 +1,7 @@
 import "./Product.css";
 import QuantityPicker from "./QtyPicker";
 import { useState } from "react";
-import { useCart } from '../context/CartContext';
+import { useCart } from "../context/CartContext";
 
 function Product(props) {
   // Default values if no props provided
@@ -10,7 +10,7 @@ function Product(props) {
     title = "Premium Wireless Headphones",
     price = 99.99,
     image = "/images/products/headphones.jpg", // Default to JPG image
-    category = "Audio"
+    category = "Audio",
   } = props;
 
   const [quantity, setQuantity] = useState(1);
@@ -28,7 +28,7 @@ function Product(props) {
     // Reset quantity after adding to cart
     setQuantity(1);
     setTotal(price);
-    setResetKey(prev => prev + 1); // Trigger reset in QtyPicker
+    setResetKey((prev) => prev + 1); // Trigger reset in QtyPicker
   };
 
   return (
@@ -45,7 +45,10 @@ function Product(props) {
           <span className="total-value">${total.toFixed(2)}</span>
         </div>
       </div>
-      <QuantityPicker onQuantityChange={handleQuantityChange} resetTrigger={resetKey} />
+      <QuantityPicker
+        onQuantityChange={handleQuantityChange}
+        resetTrigger={resetKey}
+      />
       <button className="add-to-cart-btn" onClick={handleAddToCart}>
         Add {quantity} to Cart
       </button>

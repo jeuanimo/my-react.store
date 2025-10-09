@@ -8,7 +8,7 @@ import { CartProvider, useCart } from "./context/CartContext";
 
 function AppContent() {
   const { toastMessage, isToastVisible, hideToast } = useCart();
-  
+
   return (
     <div className="App">
       <Navbar />
@@ -17,7 +17,7 @@ function AppContent() {
       </main>
       <Footer />
       <Cart />
-      <Toast 
+      <Toast
         message={toastMessage}
         isVisible={isToastVisible}
         onClose={hideToast}

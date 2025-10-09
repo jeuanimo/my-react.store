@@ -2,7 +2,11 @@ import "./QtyPicker.css";
 import { useState, useEffect } from "react";
 
 // Logical component
-function QuantityPicker({ onQuantityChange, initialQuantity = 1, resetTrigger }) {
+function QuantityPicker({
+  onQuantityChange,
+  initialQuantity = 1,
+  resetTrigger,
+}) {
   const [quantity, setQuantity] = useState(initialQuantity);
 
   // Reset quantity when resetTrigger changes

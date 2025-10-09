@@ -244,19 +244,19 @@
     width: 100vw;
     right: 0;
   }
-  
+
   .cart-header {
     padding: 1rem;
   }
-  
+
   .cart-items {
     padding: 0.75rem;
   }
-  
+
   .cart-item {
     padding: 0.75rem 0;
   }
-  
+
   .cart-footer {
     padding: 1rem;
   }

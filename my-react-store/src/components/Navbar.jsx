@@ -1,5 +1,5 @@
 import "./NavbarNew.css";
-import { useCart } from '../context/CartContext';
+import { useCart } from "../context/CartContext";
 
 function Navbar() {
   const { getCartCount, toggleCart } = useCart();

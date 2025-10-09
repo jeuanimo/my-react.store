@@ -1,6 +1,6 @@
-import React from 'react';
-import { useCart } from '../context/CartContext';
-import './Cart.css';
+import React from "react";
+import { useCart } from "../context/CartContext";
+import "./Cart.css";
 
 const Cart = () => {
   const {
@@ -10,7 +10,7 @@ const Cart = () => {
     clearCart,
     getCartTotal,
     isCartOpen,
-    toggleCart
+    toggleCart,
   } = useCart();
 
   if (!isCartOpen) return null;
@@ -25,7 +25,7 @@ const Cart = () => {
             ×
           </button>
         </div>
-        
+
         <div className="cart-content">
           {cartItems.length === 0 ? (
             <div className="cart-empty">
@@ -34,28 +34,38 @@ const Cart = () => {
           ) : (
             <>
               <div className="cart-items">
-                {cartItems.map(item => (
+                {cartItems.map((item) => (
                   <div key={item._id} className="cart-item">
-                    <img src={item.image} alt={item.title} className="cart-item-image" />
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="cart-item-image"
+                    />
                     <div className="cart-item-details">
                       <h4>{item.title}</h4>
-                      <p className="cart-item-price">${item.price.toFixed(2)}</p>
+                      <p className="cart-item-price">
+                        ${item.price.toFixed(2)}
+                      </p>
                       <div className="cart-item-quantity">
-                        <button 
-                          onClick={() => updateQuantity(item._id, item.quantity - 1)}
+                        <button
+                          onClick={() =>
+                            updateQuantity(item._id, item.quantity - 1)
+                          }
                           className="quantity-btn"
                         >
                           -
                         </button>
                         <span>{item.quantity}</span>
-                        <button 
-                          onClick={() => updateQuantity(item._id, item.quantity + 1)}
+                        <button
+                          onClick={() =>
+                            updateQuantity(item._id, item.quantity + 1)
+                          }
                           className="quantity-btn"
                         >
                           +
                         </button>
                       </div>
-                      <button 
+                      <button
                         onClick={() => removeFromCart(item._id)}
                         className="remove-btn"
                       >
@@ -65,7 +75,7 @@ const Cart = () => {
                   </div>
                 ))}
               </div>
-              
+
               <div className="cart-footer">
                 <div className="cart-total">
                   <h3>Total: ${getCartTotal().toFixed(2)}</h3>
@@ -74,9 +84,7 @@ const Cart = () => {
                   <button onClick={clearCart} className="clear-cart-btn">
                     Clear Cart
                   </button>
-                  <button className="checkout-btn">
-                    Checkout
-                  </button>
+                  <button className="checkout-btn">Checkout</button>
                 </div>
               </div>
             </>

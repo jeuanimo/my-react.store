@@ -14,7 +14,7 @@ function Catalog() {
     const dataService = new DataService();
     const data = dataService.getProducts();
     const categoryData = dataService.getCategories();
-    
+
     setAllProducts(data);
     setProducts(data);
     setCategories(categoryData);
@@ -25,7 +25,7 @@ function Catalog() {
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
     const dataService = new DataService();
-    
+
     if (category === "All") {
       setProducts(allProducts);
     } else {
@@ -48,12 +48,14 @@ function Catalog() {
         <h1>Discover Our Amazing Products</h1>
         <p>Find the perfect tech accessories for your lifestyle</p>
       </div>
-      
+
       <div className="category-filter">
         <h3>Filter by Category:</h3>
         <div className="filter-buttons">
-          <button 
-            className={selectedCategory === "All" ? "filter-btn active" : "filter-btn"}
+          <button
+            className={
+              selectedCategory === "All" ? "filter-btn active" : "filter-btn"
+            }
             onClick={() => handleCategoryChange("All")}
           >
             All Products
@@ -61,7 +63,11 @@ function Catalog() {
           {categories.map((category) => (
             <button
               key={category}
-              className={selectedCategory === category ? "filter-btn active" : "filter-btn"}
+              className={
+                selectedCategory === category
+                  ? "filter-btn active"
+                  : "filter-btn"
+              }
               onClick={() => handleCategoryChange(category)}
             >
               {category}
