@@ -25,7 +25,7 @@
 
 .btnDecrease:hover:not(:disabled),
 .btnIncrease:hover {
-  background-color: #2E4BC6;
+  background-color: #2e4bc6;
 }
 
 .btnDecrease:disabled {

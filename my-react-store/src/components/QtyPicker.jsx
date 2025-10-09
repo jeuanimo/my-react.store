@@ -1,9 +1,16 @@
 import "./QtyPicker.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // Logical component
-function QuantityPicker({ onQuantityChange, initialQuantity = 1 }) {
+function QuantityPicker({ onQuantityChange, initialQuantity = 1, resetTrigger }) {
   const [quantity, setQuantity] = useState(initialQuantity);
+
+  // Reset quantity when resetTrigger changes
+  useEffect(() => {
+    if (resetTrigger !== undefined) {
+      setQuantity(initialQuantity);
+    }
+  }, [resetTrigger, initialQuantity]);
 
   function increase() {
     const newQuantity = quantity + 1;

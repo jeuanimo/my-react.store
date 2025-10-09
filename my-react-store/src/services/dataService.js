@@ -55,6 +55,11 @@ class DataService {
   getProductsByCategory(category) {
     return catalog.filter((product) => product.category === category);
   }
+
+  getCategories() {
+    const categories = [...new Set(catalog.map(product => product.category))];
+    return categories.sort();
+  }
 }
 
 export default DataService;

@@ -1,6 +1,10 @@
 import "./NavbarNew.css";
+import { useCart } from '../context/CartContext';
 
 function Navbar() {
+  const { getCartCount, toggleCart } = useCart();
+  const cartCount = getCartCount();
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -8,9 +12,9 @@ function Navbar() {
           <h1>SIGMA Electronics</h1>
         </div>
         <div className="navbar-logo-center">
-          <img 
-            src="/images/sigma-electronics-logo.png" 
-            alt="Sigma Electronics Logo" 
+          <img
+            src="/images/sigma-electronics-logo.png"
+            alt="Sigma Electronics Logo"
             className="navbar-logo"
           />
         </div>
@@ -24,6 +28,14 @@ function Navbar() {
             </li>
             <li className="nav-link">
               <a href="#">About</a>
+            </li>
+            <li className="nav-link cart-link">
+              <button onClick={toggleCart} className="cart-button">
+                🛒
+                {cartCount > 0 && (
+                  <span className="cart-count">{cartCount}</span>
+                )}
+              </button>
             </li>
           </ul>
         </div>

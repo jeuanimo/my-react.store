@@ -1,6 +1,6 @@
 .navbar {
   background: #164f90;
-  background-image: url('/images/circuit-board-pattern.jpg');
+  background-image: url("/images/circuit-board-pattern.jpg");
   background-size: cover;
   background-repeat: repeat;
   background-position: center;
@@ -30,26 +30,34 @@
 }
 
 .navbar-logo {
-  height: 250px;
-  width: auto;
+  height: 100%;
+  width: 100%;
+  max-height: 250px;
+  max-width: 250px;
   object-fit: contain;
-  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4)) 
-          drop-shadow(0 4px 8px rgba(0, 0, 0, 0.6))
-          drop-shadow(0 0 20px rgba(255, 255, 255, 0.5))
-          drop-shadow(0 0 40px rgba(255, 255, 255, 0.3));
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 50%, transparent 70%);
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4))
+    drop-shadow(0 4px 8px rgba(0, 0, 0, 0.6))
+    drop-shadow(0 0 20px rgba(255, 255, 255, 0.5))
+    drop-shadow(0 0 40px rgba(255, 255, 255, 0.3));
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    transparent 70%
+  );
   border-radius: 50%;
-  padding: 10px;
+  padding: 0;
   transition: all 0.3s ease;
   position: relative;
+  z-index: 1;
 }
 
 .navbar-logo:hover {
   transform: scale(1.05);
-  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.5)) 
-          drop-shadow(0 6px 12px rgba(0, 0, 0, 0.7))
-          drop-shadow(0 0 30px rgba(255, 255, 255, 0.7))
-          drop-shadow(0 0 60px rgba(255, 255, 255, 0.4));
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.5))
+    drop-shadow(0 6px 12px rgba(0, 0, 0, 0.7))
+    drop-shadow(0 0 30px rgba(255, 255, 255, 0.7))
+    drop-shadow(0 0 60px rgba(255, 255, 255, 0.4));
 }
 
 .navbar-logo-center {
@@ -58,35 +66,46 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
 }
 
 .navbar-logo-center::before {
-  content: '';
+  content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 280px;
-  height: 280px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 40%, rgba(255, 255, 255, 0.05) 70%, transparent 100%);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.1) 40%,
+    rgba(255, 255, 255, 0.05) 70%,
+    transparent 100%
+  );
   border-radius: 50%;
   z-index: -1;
   animation: pulse 3s ease-in-out infinite;
-  box-shadow: 
-    0 0 30px rgba(255, 255, 255, 0.3),
-    0 0 60px rgba(255, 255, 255, 0.2),
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.3),
+    0 0 60px rgba(255, 255, 255, 0.2), 
     inset 0 0 20px rgba(255, 255, 255, 0.1),
     0 8px 20px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.6;
-    transform: translate(-50%, -50%) scale(1);
+    transform: scale(1);
   }
   50% {
     opacity: 0.9;
-    transform: translate(-50%, -50%) scale(1.1);
+    transform: scale(1.1);
   }
 }
 
@@ -132,13 +151,18 @@
 }
 
 .nav-link a:before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
   transition: left 0.5s;
 }
 
@@ -179,7 +203,7 @@
   .navbar-logo {
     height: 150px;
   }
-  
+
   .navbar-brand h1 {
     font-size: 1.3rem;
   }
@@ -218,4 +242,59 @@
     padding: 0.4rem 0.6rem;
     font-size: 0.8rem;
   }
+}
+
+/* Cart Button Styles */
+.cart-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  position: relative;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.cart-button:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #ff4757;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.cart-link {
+  margin-left: auto;
 }
