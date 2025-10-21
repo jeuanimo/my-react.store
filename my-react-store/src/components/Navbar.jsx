@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./NavbarNew.css";
 import { useCart } from "../context/CartContext";
 
@@ -21,13 +22,16 @@ function Navbar() {
         <div className="navbar-menu">
           <ul className="navbar-nav">
             <li className="nav-link">
-              <a href="#">Home</a>
+              <Link to={"/"}>Home</Link>
             </li>
             <li className="nav-link">
-              <a href="#">Catalog</a>
+              <Link to={"/catalog"}>Catalog</Link>
             </li>
             <li className="nav-link">
-              <a href="#">About</a>
+              <Link to={"/about"}>About</Link>
+            </li>
+            <li className="nav-link">
+              <Link to={"/contact"}>Contact</Link>
             </li>
             <li className="nav-link cart-link">
               <button onClick={toggleCart} className="cart-button">
