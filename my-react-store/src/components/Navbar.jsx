@@ -1,9 +1,10 @@
+import { useGlobalContext } from "../state/globalContext";
 import { Link } from "react-router-dom";
+import { IconUser, IconShoppingCart } from "@tabler/icons-react";
 import "./NavbarNew.css";
-import { useCart } from "../context/CartContext";
 
 function Navbar() {
-  const { getCartCount, toggleCart } = useCart();
+  const { user, getCartCount, toggleCart } = useGlobalContext();
   const cartCount = getCartCount();
 
   return (
@@ -34,13 +35,19 @@ function Navbar() {
               <Link to={"/contact"}>Contact</Link>
             </li>
             <li className="nav-link">
-                  <Link to={"/admin"}>Admin</Link>
-                  </li>
-                     
+              <Link to={"/admin"}>Admin</Link>
+            </li>
+
+            <li className="nav-link user-display">
+              <span className="user-name-badge">
+                <IconUser size={18} stroke={2} />
+                {user.name}
+              </span>
+            </li>
+
             <li className="nav-link cart-link">
               <button onClick={toggleCart} className="cart-button">
-              
-                🛒
+                <IconShoppingCart size={20} stroke={2} />
                 {cartCount > 0 && (
                   <span className="cart-count">{cartCount}</span>
                 )}

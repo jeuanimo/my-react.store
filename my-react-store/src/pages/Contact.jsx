@@ -1,4 +1,15 @@
 import { useState } from "react";
+import {
+  IconMapPin,
+  IconPhone,
+  IconMail,
+  IconSend,
+  IconBrandFacebook,
+  IconBrandTwitter,
+  IconBrandInstagram,
+  IconBrandLinkedin,
+  IconBrandYoutube,
+} from "@tabler/icons-react";
 import "./Contact.css";
 
 function Contact() {
@@ -49,7 +60,9 @@ function Contact() {
             <div className="contact-grid">
               <div className="contact-details">
                 <div className="contact-item">
-                  <div className="contact-icon">📍</div>
+                  <div className="contact-icon">
+                    <IconMapPin size={32} stroke={1.5} />
+                  </div>
                   <div className="contact-text">
                     <h3>Address</h3>
                     <p>
@@ -60,7 +73,9 @@ function Contact() {
                   </div>
                 </div>
                 <div className="contact-item">
-                  <div className="contact-icon">📞</div>
+                  <div className="contact-icon">
+                    <IconPhone size={32} stroke={1.5} />
+                  </div>
                   <div className="contact-text">
                     <h3>Phone</h3>
                     <p>
@@ -71,7 +86,9 @@ function Contact() {
                   </div>
                 </div>
                 <div className="contact-item">
-                  <div className="contact-icon">✉️</div>
+                  <div className="contact-icon">
+                    <IconMail size={32} stroke={1.5} />
+                  </div>
                   <div className="contact-text">
                     <h3>Email</h3>
                     <p>
@@ -217,6 +234,11 @@ function Contact() {
                   ></textarea>
                 </div>
                 <button type="submit" className="submit-btn">
+                  <IconSend
+                    size={18}
+                    stroke={1.5}
+                    style={{ marginRight: "8px" }}
+                  />
                   Send Message
                 </button>
               </form>
@@ -239,7 +261,9 @@ function Contact() {
                 rel="noopener noreferrer"
                 className="social-link facebook"
               >
-                <span className="social-icon">📘</span>
+                <span className="social-icon">
+                  <IconBrandFacebook size={24} stroke={1.5} />
+                </span>
                 <span className="social-text">Facebook</span>
               </a>
               <a
@@ -248,7 +272,9 @@ function Contact() {
                 rel="noopener noreferrer"
                 className="social-link twitter"
               >
-                <span className="social-icon">🐦</span>
+                <span className="social-icon">
+                  <IconBrandTwitter size={24} stroke={1.5} />
+                </span>
                 <span className="social-text">Twitter</span>
               </a>
               <a
@@ -257,7 +283,9 @@ function Contact() {
                 rel="noopener noreferrer"
                 className="social-link instagram"
               >
-                <span className="social-icon">📷</span>
+                <span className="social-icon">
+                  <IconBrandInstagram size={24} stroke={1.5} />
+                </span>
                 <span className="social-text">Instagram</span>
               </a>
               <a
@@ -266,7 +294,9 @@ function Contact() {
                 rel="noopener noreferrer"
                 className="social-link linkedin"
               >
-                <span className="social-icon">💼</span>
+                <span className="social-icon">
+                  <IconBrandLinkedin size={24} stroke={1.5} />
+                </span>
                 <span className="social-text">LinkedIn</span>
               </a>
               <a
@@ -275,7 +305,9 @@ function Contact() {
                 rel="noopener noreferrer"
                 className="social-link youtube"
               >
-                <span className="social-icon">📺</span>
+                <span className="social-icon">
+                  <IconBrandYoutube size={24} stroke={1.5} />
+                </span>
                 <span className="social-text">YouTube</span>
               </a>
             </div>

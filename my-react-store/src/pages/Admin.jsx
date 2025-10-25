@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { IconDeviceFloppy, IconTicket } from "@tabler/icons-react";
 import "./Admin.css";
 
 function Admin() {
@@ -112,6 +113,11 @@ function Admin() {
                 </div>
                 <div>
                   <button onClick={saveProduct} className="btn btn-primary">
+                    <IconDeviceFloppy
+                      size={18}
+                      stroke={1.5}
+                      style={{ marginRight: "8px" }}
+                    />
                     Save Product
                   </button>
                 </div>
@@ -183,9 +189,13 @@ function Admin() {
                   />
                 </div>
                 <div>
-                  <button onClick={saveCoupon} className="btn btn-dark">
-                    {" "}
-                    Save Coupon{" "}
+                  <button onClick={saveCoupon} className="btn btn-primary">
+                    <IconTicket
+                      size={18}
+                      stroke={1.5}
+                      style={{ marginRight: "8px" }}
+                    />
+                    Save Coupon
                   </button>
                 </div>
               </div>

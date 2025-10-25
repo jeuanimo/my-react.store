@@ -1,4 +1,20 @@
 import { Link } from "react-router-dom";
+import {
+  IconBolt,
+  IconShield,
+  IconCurrencyDollar,
+  IconTool,
+  IconHeadphones,
+  IconDeviceWatch,
+  IconMouse,
+  IconDeviceGamepad2,
+  IconTruck,
+  IconCreditCard,
+  IconRotateClockwise2,
+  IconShoppingBag,
+  IconBook,
+  IconInfoCircle,
+} from "@tabler/icons-react";
 import "./Home.css";
 
 function Home() {
@@ -17,10 +33,12 @@ function Home() {
               innovative solutions from the most trusted names in technology.
             </p>
             <div className="hero-buttons">
-              <Link to="/catalog" className="btn-primary">
+              <Link to="/catalog" className="btn-secondary">
+                <IconShoppingBag size={20} stroke={2} />
                 Shop Now
               </Link>
               <Link to="/about" className="btn-secondary">
+                <IconBook size={20} stroke={2} />
                 Our Story
               </Link>
             </div>
@@ -33,7 +51,9 @@ function Home() {
             <h2>Why Choose Sigma Electronics?</h2>
             <div className="features-grid">
               <div className="feature-card">
-                <div className="feature-icon">⚡</div>
+                <div className="feature-icon">
+                  <IconBolt size={64} stroke={1.5} />
+                </div>
                 <h3>Lightning Fast Delivery</h3>
                 <p>
                   Get your tech essentials delivered within 24-48 hours with our
@@ -41,7 +61,9 @@ function Home() {
                 </p>
               </div>
               <div className="feature-card">
-                <div className="feature-icon">🛡️</div>
+                <div className="feature-icon">
+                  <IconShield size={64} stroke={1.5} />
+                </div>
                 <h3>Lifetime Warranty</h3>
                 <p>
                   Every product comes with our comprehensive warranty and
@@ -49,7 +71,9 @@ function Home() {
                 </p>
               </div>
               <div className="feature-card">
-                <div className="feature-icon">💰</div>
+                <div className="feature-icon">
+                  <IconCurrencyDollar size={64} stroke={1.5} />
+                </div>
                 <h3>Best Price Guarantee</h3>
                 <p>
                   We match any competitor's price and offer exclusive member
@@ -57,7 +81,9 @@ function Home() {
                 </p>
               </div>
               <div className="feature-card">
-                <div className="feature-icon">🔧</div>
+                <div className="feature-icon">
+                  <IconTool size={64} stroke={1.5} />
+                </div>
                 <h3>Expert Tech Support</h3>
                 <p>
                   Our certified technicians provide 24/7 support for all your
@@ -74,7 +100,9 @@ function Home() {
             <h2>Explore Our Categories</h2>
             <div className="categories-grid">
               <div className="category-card">
-                <div className="category-image">🎧</div>
+                <div className="category-image">
+                  <IconHeadphones size={80} stroke={1.5} />
+                </div>
                 <h3>Audio</h3>
                 <p>
                   Premium wireless headphones, Bluetooth speakers, and
@@ -85,7 +113,9 @@ function Home() {
                 </Link>
               </div>
               <div className="category-card">
-                <div className="category-image">⌚</div>
+                <div className="category-image">
+                  <IconDeviceWatch size={80} stroke={1.5} />
+                </div>
                 <h3>Wearables</h3>
                 <p>
                   Smart fitness watches, health trackers, and innovative
@@ -96,7 +126,9 @@ function Home() {
                 </Link>
               </div>
               <div className="category-card">
-                <div className="category-image">🖱️</div>
+                <div className="category-image">
+                  <IconMouse size={80} stroke={1.5} />
+                </div>
                 <h3>Accessories</h3>
                 <p>
                   Essential tech accessories including wireless mice, USB hubs,
@@ -107,7 +139,9 @@ function Home() {
                 </Link>
               </div>
               <div className="category-card">
-                <div className="category-image">🎮</div>
+                <div className="category-image">
+                  <IconDeviceGamepad2 size={80} stroke={1.5} />
+                </div>
                 <h3>Gaming</h3>
                 <p>
                   Gaming keyboards, controllers, and professional-grade gaming
@@ -187,23 +221,31 @@ function Home() {
             </p>
             <div className="cta-buttons">
               <Link to="/catalog" className="btn-primary">
+                <IconShoppingBag size={20} stroke={2} />
                 Start Shopping
               </Link>
               <Link to="/about" className="btn-outline">
+                <IconInfoCircle size={20} stroke={2} />
                 Learn More
               </Link>
             </div>
             <div className="cta-features">
               <div className="cta-feature">
-                <span className="cta-icon">🚚</span>
+                <span className="cta-icon">
+                  <IconTruck size={24} stroke={1.5} />
+                </span>
                 <span>Free Shipping Over $50</span>
               </div>
               <div className="cta-feature">
-                <span className="cta-icon">💳</span>
+                <span className="cta-icon">
+                  <IconCreditCard size={24} stroke={1.5} />
+                </span>
                 <span>Secure Payment Options</span>
               </div>
               <div className="cta-feature">
-                <span className="cta-icon">↩️</span>
+                <span className="cta-icon">
+                  <IconRotateClockwise2 size={24} stroke={1.5} />
+                </span>
                 <span>30-Day Returns</span>
               </div>
             </div>

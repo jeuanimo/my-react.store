@@ -1,5 +1,5 @@
 import React from "react";
-import { useCart } from "../context/CartContext";
+import { useGlobalContext } from "../state/globalContext";
 import "./Cart.css";
 
 const Cart = () => {
@@ -11,7 +11,8 @@ const Cart = () => {
     getCartTotal,
     isCartOpen,
     toggleCart,
-  } = useCart();
+    user,
+  } = useGlobalContext();
 
   if (!isCartOpen) return null;
 
@@ -21,6 +22,9 @@ const Cart = () => {
       <div className="cart-sidebar">
         <div className="cart-header">
           <h2>Shopping Cart</h2>
+          {user.isLoggedIn && (
+            <p className="cart-user">Shopping as: {user.name}</p>
+          )}
           <button className="cart-close" onClick={toggleCart}>
             ×
           </button>

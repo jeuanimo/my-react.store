@@ -1,7 +1,7 @@
 import "./Product.css";
 import QuantityPicker from "./QtyPicker";
 import { useState } from "react";
-import { useCart } from "../context/CartContext";
+import { useGlobalContext } from "../state/globalContext";
 
 function Product(props) {
   // Default values if no props provided
@@ -16,7 +16,7 @@ function Product(props) {
   const [quantity, setQuantity] = useState(1);
   const [total, setTotal] = useState(price);
   const [resetKey, setResetKey] = useState(0);
-  const { addToCart } = useCart();
+  const { addToCart, user } = useGlobalContext();
 
   const handleQuantityChange = (newQuantity) => {
     setQuantity(newQuantity);
@@ -52,6 +52,11 @@ function Product(props) {
       <button className="add-to-cart-btn" onClick={handleAddToCart}>
         Add {quantity} to Cart
       </button>
+      {user.isLoggedIn && (
+        <div className="user-product-info">
+          <small>Adding to {user.name}'s cart</small>
+        </div>
+      )}
     </div>
   );
 }
