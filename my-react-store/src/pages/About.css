@@ -51,6 +51,54 @@
   opacity: 0.9;
   position: relative;
   z-index: 2;
+  margin-bottom: 1.5rem;
+}
+
+/* Button Styles for About Page */
+.btn {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0.5rem;
+  position: relative;
+  z-index: 2;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-dark {
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-dark:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.btn-light {
+  background: rgba(255, 255, 255, 0.9);
+  color: #164f90;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.btn-light:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+}
+
+/* Email display styling */
+.hero-section p {
+  position: relative;
+  z-index: 2;
+  margin: 0.5rem 0;
 }
 
 /* Content Wrapper */

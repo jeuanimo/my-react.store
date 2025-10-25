@@ -33,8 +33,13 @@ function Navbar() {
             <li className="nav-link">
               <Link to={"/contact"}>Contact</Link>
             </li>
+            <li className="nav-link">
+                  <Link to={"/admin"}>Admin</Link>
+                  </li>
+                     
             <li className="nav-link cart-link">
               <button onClick={toggleCart} className="cart-button">
+              
                 🛒
                 {cartCount > 0 && (
                   <span className="cart-count">{cartCount}</span>

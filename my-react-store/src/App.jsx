@@ -9,6 +9,7 @@ import { CartProvider, useCart } from "./context/CartContext";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Admin from "./pages/Admin";
 
 function AppContent() {
   const { toastMessage, isToastVisible, hideToast } = useCart();
@@ -21,6 +22,7 @@ function AppContent() {
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/about" element={<About />}></Route>
+            <Route path="/admin" element={<Admin />}></Route>
             <Route path="/catalog" element={<Catalog />}></Route>
             <Route path="/contact" element={<Contact />}></Route>
             <Route path="cart" element={<Cart />}></Route>
