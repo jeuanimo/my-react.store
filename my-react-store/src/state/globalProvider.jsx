@@ -12,7 +12,7 @@ function GlobalProvider(props) {
     name: "Jeuan",
     cohort: 61,
     email: "",
-    isLoggedIn: false,
+    isLoggedIn: true, // Temporarily set to true to see the user name in notifications
     preferences: {},
   });
 
@@ -62,28 +62,40 @@ function GlobalProvider(props) {
       const existingItem = prevCart.find((item) => item._id === product._id);
 
       if (existingItem) {
-        showToast(`Updated ${product.title} quantity in cart`);
+        const message = user.isLoggedIn
+          ? `${user.name}: Updated ${product.title} quantity in cart`
+          : `Updated ${product.title} quantity in cart`;
+        showToast(message);
         return prevCart.map((item) =>
           item._id === product._id
             ? { ...item, quantity: item.quantity + quantity }
             : item
         );
       } else {
-        showToast(`Added ${product.title} to cart`);
+        const message = user.isLoggedIn
+          ? `${user.name}: Added ${product.title} to cart`
+          : `Added ${product.title} to cart`;
+        showToast(message);
         return [...prevCart, { ...product, quantity }];
       }
     });
   }
 
   function clearCart() {
+    const message = user.isLoggedIn
+      ? `${user.name}: Cart cleared`
+      : "Cart cleared";
     setCart([]);
-    showToast("Cart cleared");
+    showToast(message);
   }
 
   function removeProductFromCart(productId) {
     const product = cart.find((item) => item._id === productId);
     if (product) {
-      showToast(`Removed ${product.title} from cart`);
+      const message = user.isLoggedIn
+        ? `${user.name}: Removed ${product.title} from cart`
+        : `Removed ${product.title} from cart`;
+      showToast(message);
     }
     setCart((prevCart) => prevCart.filter((p) => p._id !== productId));
   }

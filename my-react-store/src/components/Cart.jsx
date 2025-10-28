@@ -1,5 +1,7 @@
 import React from "react";
+import { useContext } from "react";
 import { useGlobalContext } from "../state/globalContext";
+import { IconTrash } from "@tabler/icons-react";
 import "./Cart.css";
 
 const Cart = () => {
@@ -47,6 +49,7 @@ const Cart = () => {
                     />
                     <div className="cart-item-details">
                       <h4>{item.title}</h4>
+                      <p className="cart-item-category">{item.category}</p>
                       <p className="cart-item-price">
                         ${item.price.toFixed(2)}
                       </p>
@@ -73,6 +76,7 @@ const Cart = () => {
                         onClick={() => removeFromCart(item._id)}
                         className="remove-btn"
                       >
+                        <IconTrash size={16} />
                         Remove
                       </button>
                     </div>
